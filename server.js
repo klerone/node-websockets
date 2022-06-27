@@ -14,13 +14,13 @@ const wss = new Server({ server });
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
-  client.sent("Bienvenido cerote");
+  client.send("Bienvenido cerote");
   ws.on('close', () => console.log('Client disconnected'));
 });
 
 setInterval(() => {
   wss.clients.forEach((client) => {
     client.send(new Date().toTimeString());
-	client.sent("Hola cerote");
+	client.send("Hola cerote");
   });
 }, 1000);
