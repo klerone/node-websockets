@@ -14,7 +14,7 @@ const wss = new Server({ server });
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
-  client.send("Bienvenido cerote");
+  //client.send("Bienvenido cerote");
   ws.on('close', () => console.log('Client disconnected'));
 });
 
